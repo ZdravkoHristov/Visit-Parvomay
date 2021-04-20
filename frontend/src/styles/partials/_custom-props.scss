@@ -1,0 +1,13 @@
+@use './colors';
+@use './typography';
+:root {
+    @each $color, $hue in colors.$colors {
+        @each $name, $value in $hue {
+            --clr-#{$color}-#{$name}: #{$value};
+        }
+    }
+
+    @each $size, $value in typography.$sizes {
+        --txt-#{$size}: #{$value};
+    }
+}
