@@ -20,22 +20,22 @@
     <nav class="main-nav">
         <ul class="flex menu">
             <li>
-                <a href="">Начало</a>
+                <router-link tag="a" to="home">Начало</router-link>
             </li>
             <li>
-                <a href="">Места</a>
+                <router-link tag="a" to="places">Места</router-link>
             </li>
             <li>
-                <a href="">Ресторанти</a>
+                <router-link tag="a" to="restaurants">Ресторанти</router-link>
             </li>
             <li>
-                <a href="">Туризъм</a>
+                <router-link tag="a" to="tourism">Туризъм</router-link>
             </li>
             <li>
-                <a href="">Празненства</a>
+                <router-link tag="a" to="celebrations">Празненства</router-link>
             </li>
             <li>
-                <a href="">Карта</a>
+                <router-link tag="a" to="map">Карта</router-link>
             </li>
         </ul>
     </nav>
