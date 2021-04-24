@@ -1,5 +1,6 @@
 <template>
     <pm-header></pm-header>
+    <router-view class="main-content"></router-view>
 </template>
 
 <script>
