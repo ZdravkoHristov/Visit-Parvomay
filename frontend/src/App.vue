@@ -1,6 +1,5 @@
 <template>
     <pm-header></pm-header>
-    <p>asd</p>
     <router-view class="main-content"></router-view>
 </template>
 
