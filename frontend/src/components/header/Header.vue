@@ -19,29 +19,30 @@
 
     <nav class="main-nav">
         <ul class="flex menu">
-            <li>
-                <router-link tag="a" to="home">Начало</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="places">Места</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="restaurants">Ресторанти</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="tourism">Туризъм</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="celebrations">Празненства</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="map">Карта</router-link>
-            </li>
+            <router-link to="home" tag="li"><a>Начало</a></router-link>
+
+            <router-link to="places" tag="li"><a>Места</a></router-link>
+
+            <router-link to="restaurants" tag="li"
+                ><a>Ресторанти</a></router-link
+            >
+
+            <router-link to="tourism" tag="li"><a>Туризъм</a></router-link>
+
+            <router-link to="celebrations" tag="li"
+                ><a>Празненства</a></router-link
+            >
+
+            <router-link to="map" tag="li"><a>Карта</a></router-link>
         </ul>
     </nav>
 </template>
 
 <style lang="scss" scoped>
+.router-link-active {
+    background: red;
+}
+
 .main-header {
     height: 400px;
     min-height: 50vh;
@@ -119,7 +120,7 @@
         text-decoration: none;
         color: #f3f3f4;
         font-size: 23px;
-        padding: 22px;
+        padding: 15px 22px;
         display: inline-block;
     }
 }
