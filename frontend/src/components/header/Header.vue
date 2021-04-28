@@ -18,29 +18,25 @@
     </header>
 
     <nav class="main-nav">
-        <ul class="flex menu">
-            <router-link to="home" tag="li"><a>Начало</a></router-link>
+        <div class="flex menu">
+            <router-link to="home">Начало</router-link>
 
-            <router-link to="places" tag="li"><a>Места</a></router-link>
+            <router-link to="places">Места</router-link>
 
-            <router-link to="restaurants" tag="li"
-                ><a>Ресторанти</a></router-link
-            >
+            <router-link to="restaurants">Ресторанти</router-link>
 
-            <router-link to="tourism" tag="li"><a>Туризъм</a></router-link>
+            <router-link to="tourism">Туризъм</router-link>
 
-            <router-link to="celebrations" tag="li"
-                ><a>Празненства</a></router-link
-            >
+            <router-link to="celebrations">Празненства</router-link>
 
-            <router-link to="map" tag="li"><a>Карта</a></router-link>
-        </ul>
+            <router-link to="map">Карта</router-link>
+        </div>
     </nav>
 </template>
 
 <style lang="scss" scoped>
 .router-link-active {
-    background: red;
+    background: #117d59;
 }
 
 .main-header {
@@ -100,10 +96,14 @@
     top: 0;
     box-shadow: 0 -6px 10px -2px #1a1a1a;
 
-    li {
-        list-style: none;
+    a {
         flex: 1;
         text-align: center;
+        text-decoration: none;
+        color: #f3f3f4;
+        font-size: 23px;
+        padding: 22px;
+        display: inline-block;
 
         &:hover {
             background: var(--clr-other-green);
@@ -112,16 +112,8 @@
         }
     }
 
-    li + li {
+    a + a {
         border-left: 1px solid #848484;
-    }
-
-    a {
-        text-decoration: none;
-        color: #f3f3f4;
-        font-size: 23px;
-        padding: 15px 22px;
-        display: inline-block;
     }
 }
 </style>
