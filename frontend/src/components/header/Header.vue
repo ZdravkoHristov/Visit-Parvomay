@@ -52,7 +52,6 @@
 
     h1 {
         color: #f3f3f3;
-
         font-size: var(--txt-lg);
         left: -4rem;
         position: relative;

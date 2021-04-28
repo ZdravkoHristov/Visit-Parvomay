@@ -1,5 +1,6 @@
 <template>
     <pm-header></pm-header>
+    <p>asd</p>
     <router-view class="main-content"></router-view>
 </template>
 
@@ -14,4 +15,7 @@ export default {
 
 <style lang="scss">
 @import "@/styles/main.scss";
+p {
+    font-size: var(--txt-nm);
+}
 </style>
