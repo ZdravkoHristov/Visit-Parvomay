@@ -1,22 +1,19 @@
 <template>
-<div class="info-box">
+<section class="info-box">
 	<p class="ta-c">
 		Добре дошли в нашия уебсайт! Тук ще откриете интересни<br> забележителности, цветни кътчета, гостоприемни заведения<br> и интересна информация за общи
 	</p>
-</div>
+</section>
 
 
-<div class="info-box-2">
+<section class="info-box-2">
 	<p class="ta-c">
 		Не стойте гладни, а опитайте специалитетите на нашите<br> ресторанти! Също така, не пропускайте чаша топко кафе в<br> уютните ни заведения!
 	</p>
-</div>
+</section>
 
-<div class="restaurant-boxes">
+<section class="restaurant-boxes">
 
-
-
-	<div class="restaurant-boxes">
 
 
 		<div class="button-wrapper">
@@ -24,8 +21,8 @@
 			Към ресторанта &gt; &gt;
 		</button>
 		</div>
-	</div>
-</div>
+</section>
+
 </template>
 
 <style lang="scss" scoped>
