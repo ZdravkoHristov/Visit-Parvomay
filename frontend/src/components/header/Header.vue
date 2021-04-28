@@ -18,30 +18,27 @@
     </header>
 
     <nav class="main-nav">
-        <ul class="flex menu">
-            <li>
-                <router-link tag="a" to="home">Начало</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="places">Места</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="restaurants">Ресторанти</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="tourism">Туризъм</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="celebrations">Празненства</router-link>
-            </li>
-            <li>
-                <router-link tag="a" to="map">Карта</router-link>
-            </li>
-        </ul>
+        <div class="flex menu">
+            <router-link to="home">Начало</router-link>
+
+            <router-link to="places">Места</router-link>
+
+            <router-link to="restaurants">Ресторанти</router-link>
+
+            <router-link to="tourism">Туризъм</router-link>
+
+            <router-link to="celebrations">Празненства</router-link>
+
+            <router-link to="map">Карта</router-link>
+        </div>
     </nav>
 </template>
 
 <style lang="scss" scoped>
+.router-link-active {
+    background: #117d59;
+}
+
 .main-header {
     height: 400px;
     min-height: 50vh;
@@ -55,7 +52,6 @@
 
     h1 {
         color: #f3f3f3;
-
         font-size: var(--txt-lg);
         left: -4rem;
         position: relative;
@@ -99,10 +95,14 @@
     top: 0;
     box-shadow: 0 -6px 10px -2px #1a1a1a;
 
-    li {
-        list-style: none;
+    a {
         flex: 1;
         text-align: center;
+        text-decoration: none;
+        color: #f3f3f4;
+        font-size: 23px;
+        padding: 22px;
+        display: inline-block;
 
         &:hover {
             background: var(--clr-other-green);
@@ -111,16 +111,8 @@
         }
     }
 
-    li + li {
+    a + a {
         border-left: 1px solid #848484;
-    }
-
-    a {
-        text-decoration: none;
-        color: #f3f3f4;
-        font-size: 23px;
-        padding: 22px;
-        display: inline-block;
     }
 }
 </style>
