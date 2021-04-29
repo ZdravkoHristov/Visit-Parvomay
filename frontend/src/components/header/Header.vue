@@ -94,6 +94,7 @@
     position: sticky;
     top: 0;
     box-shadow: 0 -6px 10px -2px #1a1a1a;
+    z-index: 999999;
 
     a {
         flex: 1;
