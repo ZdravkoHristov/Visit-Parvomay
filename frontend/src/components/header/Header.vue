@@ -81,7 +81,7 @@
     }
 
     p {
-        font-size: 20px;
+        font-size: min(1.8vw, 20px);
         color: var(--clr-light-gray2);
         padding-right: 100px;
         text-align: center;
