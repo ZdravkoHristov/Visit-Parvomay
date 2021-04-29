@@ -96,8 +96,6 @@
 
 <style lang="scss" scoped>
 .btn-primary {
-    // ПО-КЪСНО ДА СЕ ПРЕМАХНЕ СЛЕДВАЩИЯ РЕД
-    border-radius: 12px;
     border: 1px solid white;
 }
 .info-box {
@@ -137,8 +135,6 @@
 }
 
 .what-can-you-find {
-    // СЛЕДВАЩИЯТ РЕД ТРЯБВА ДА БЪДЕ ПРЕМАХНАТ И ШИРИНАТА НА .container ДА БЪДЕ УВЕЛИЧЕНА НА 1300
-    max-width: 1300px;
     display: flex;
     padding: 1.2rem 0 1.2rem 1.5rem;
 
@@ -188,11 +184,5 @@
             font-size: 20px;
         }
     }
-}
-
-//СЛЕДВАЩИЯТ РЕД ТРЯБВА ДА БЪДЕ ПРЕМЕСТЕН В main.scss
-img {
-    width: 100%;
-    height: 100%;
 }
 </style>
