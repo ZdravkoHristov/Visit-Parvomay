@@ -176,7 +176,7 @@ export default {
 
 .what-can-you-find {
     display: flex;
-    padding: 1.2rem 0 1.2rem 1.5rem;
+    padding: 1.2rem 0 1.2rem 3.5rem;
     margin: auto;
     max-width: 1300px;
 
@@ -187,6 +187,7 @@ export default {
     h2 {
         color: var(--clr-other-green);
         letter-spacing: 2px;
+        margin-top: 5rem;
     }
 
     p {
