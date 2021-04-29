@@ -88,13 +88,16 @@
 
     <section class="restaurant-boxes">
         <div class="boxes-holder">
-            <restaurant-box></restaurant-box>
+            <restaurant-box class="left hipnoza"></restaurant-box>
+            <restaurant-box class="hipnoza"></restaurant-box>
+            <restaurant-box class="hipnoza"></restaurant-box>
+            <restaurant-box class="hipnoza"></restaurant-box>
         </div>
 
         <div class="button-wrapper">
-            <button class="button-restaurant">
+            <router-link class="button-restaurant btn-primary" to="restaurants">
                 Към ресторанта &gt; &gt;
-            </button>
+            </router-link>
         </div>
     </section>
 </template>
@@ -126,13 +129,13 @@ export default {
     background-color: var(--clr-dark-1);
 }
 .button-restaurant {
-    background-color: var(--clr-other-green);
     padding: 8px;
     border-radius: 12px;
     color: white;
     border: 1px solid white;
     margin-bottom: 5%;
     margin-top: 10%;
+    text-decoration: none;
 }
 
 .button-wrapper {
@@ -143,6 +146,19 @@ export default {
 
 .boxes-holder {
     display: flex;
+    &>*{    
+    width: 14%;
+    height: 35vh;
+    margin: 0% 4% 0% 4%;
+    position: relative;
+    top: 10vh;}
+		.left{
+		margin-left: 10%;
+		}
+		.hipnoza{
+			background-image: url("../assets/parvomay/hiphop.jpeg")
+
+		}
 }
 .wrapper-section {
     background-color: var(--clr-light-gray1);
@@ -199,4 +215,5 @@ export default {
         }
     }
 }
+
 </style>
