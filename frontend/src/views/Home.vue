@@ -7,75 +7,79 @@
         </p>
     </section>
 
-    <section class="wrapper-section">
-        <article class="what-can-you-find container">
-            <div class="info">
-                <h2>
-                    Какво мога да намеря в община Първомай?
-                </h2>
+    <section class="what-can-you-find ">
+        <div class="info">
+            <h2>
+                Какво мога да намеря в община Първомай?
+            </h2>
 
-                <p>
-                    Подбрали сме Ви едни от<br />
-                    най-интересните<br />
-                    забележителности, които<br />
-                    може да намерите на<br />
-                    територията на община<br />
-                    Първомай
-                </p>
+            <p>
+                Подбрали сме Ви едни от<br />
+                най-интересните<br />
+                забележителности, които<br />
+                може да намерите на<br />
+                територията на община<br />
+                Първомай
+            </p>
 
-                <router-link class="btn-primary" to="places"
-                    >Към места &gt; &gt;</router-link
-                >
-            </div>
+            <router-link class="btn-primary" to="places"
+                >Към места &gt; &gt;</router-link
+            >
+        </div>
 
-            <div class="images">
-                <div class="col">
-                    <div class="img-holder">
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        />
-                        <span class="title">Читалище</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="img-holder">
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
-                    </div>
-                    <div class="img-holder">
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="img-holder">
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
-                    </div>
-                    <div class="img-holder">
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="img-holder">
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
-                    </div>
+        <div class="images">
+            <div class="col">
+                <div class="img-holder">
+                    <div class="dark-overlay"></div>
+                    <img
+                        src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
+                        alt="читалище Първомай"
+                    />
+                    <span class="title">Читалище</span>
                 </div>
             </div>
-        </article>
+            <div class="col">
+                <div class="img-holder">
+                    <div class="dark-overlay"></div>
+                    <img
+                        src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
+                        alt="читалище Първомай"
+                    /><span class="title">Читалище</span>
+                </div>
+                <div class="img-holder">
+                    <div class="dark-overlay"></div>
+                    <img
+                        src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
+                        alt="читалище Първомай"
+                    /><span class="title">Читалище</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="img-holder">
+                    <div class="dark-overlay"></div>
+                    <img
+                        src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
+                        alt="читалище Първомай"
+                    /><span class="title">Читалище</span>
+                </div>
+                <div class="img-holder">
+                    <div class="dark-overlay"></div>
+                    <img
+                        src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
+                        alt="читалище Първомай"
+                    /><span class="title">Читалище</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="img-holder">
+                    <div class="dark-overlay"></div>
+                    <img
+                        src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
+                        alt="читалище Първомай"
+                    /><span class="title">Читалище</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="info-box-2">
@@ -86,7 +90,7 @@
         </p>
     </section>
 
-    <section class="restaurant-boxes">
+    <section class="restaurant-boxes ">
         <div class="boxes-holder">
             <restaurant-box class="left hipnoza"></restaurant-box>
             <restaurant-box class="hipnoza"></restaurant-box>
@@ -108,6 +112,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@use '../styles/partials/mixins' as *;
+
+.dark-overlay {
+    @include dark-overlay(0.2);
+}
+
 .btn-primary {
     border: 1px solid white;
 }
@@ -146,19 +156,19 @@ export default {
 
 .boxes-holder {
     display: flex;
-    &>*{    
-    width: 14%;
-    height: 35vh;
-    margin: 0% 4% 0% 4%;
-    position: relative;
-    top: 10vh;}
-		.left{
-		margin-left: 10%;
-		}
-		.hipnoza{
-			background-image: url("../assets/parvomay/hiphop.jpeg")
-
-		}
+    & > * {
+        width: 14%;
+        height: 35vh;
+        margin: 0% 4% 0% 4%;
+        position: relative;
+        top: 10vh;
+    }
+    .left {
+        margin-left: 10%;
+    }
+    .hipnoza {
+        background-image: url("../assets/parvomay/hiphop.jpeg");
+    }
 }
 .wrapper-section {
     background-color: var(--clr-light-gray1);
@@ -167,6 +177,8 @@ export default {
 .what-can-you-find {
     display: flex;
     padding: 1.2rem 0 1.2rem 1.5rem;
+    margin: auto;
+    max-width: 1300px;
 
     .info {
         min-width: 300px;
@@ -215,5 +227,4 @@ export default {
         }
     }
 }
-
 </style>
