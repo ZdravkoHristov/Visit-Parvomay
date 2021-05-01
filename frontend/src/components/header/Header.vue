@@ -81,7 +81,7 @@
     }
 
     p {
-        font-size: 20px;
+        font-size: min(1.8vw, 20px);
         color: var(--clr-light-gray2);
         padding-right: 100px;
         text-align: center;
@@ -94,6 +94,7 @@
     position: sticky;
     top: 0;
     box-shadow: 0 -6px 10px -2px #1a1a1a;
+    z-index: 999999;
 
     a {
         flex: 1;
