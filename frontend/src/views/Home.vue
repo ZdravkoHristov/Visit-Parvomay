@@ -1,11 +1,9 @@
 <template>
-    <section class="info-box">
-        <p class="ta-c">
-            Добре дошли в нашия уебсайт! Тук ще откриете интересни<br />
-            забележителности, цветни кътчета, гостоприемни заведения<br />
-            и интересна информация за общи
-        </p>
-    </section>
+    <info-box>
+        Добре дошли в нашия уебсайт! Тук ще откриете интересни<br />
+        забележителности, цветни кътчета, гостоприемни заведения<br />
+        и интересна информация за общи
+    </info-box>
 
     <section class="what-can-you-find ">
         <div class="info">
@@ -82,13 +80,11 @@
         </div>
     </section>
 
-    <section class="info-box-2">
-        <p class="ta-c">
-            Не стойте гладни, а опитайте специалитетите на нашите<br />
-            ресторанти! Също така, не пропускайте чаша топко кафе в<br />
-            уютните ни заведения!
-        </p>
-    </section>
+    <info-box>
+        Не стойте гладни, а опитайте специалитетите на нашите<br />
+        ресторанти! Също така, не пропускайте чаша топко кафе в<br />
+        уютните ни заведения!
+    </info-box>
 
     <section class="restaurant-boxes ">
         <div class="boxes-holder">
@@ -107,8 +103,9 @@
 </template>
 <script>
 import RestaurantBox from "@/components/home/RestaurantBox";
+import InfoBox from "@/components/others/InfoBox";
 export default {
-    components: { RestaurantBox }
+    components: { RestaurantBox, InfoBox }
 };
 </script>
 <style lang="scss" scoped>
@@ -120,19 +117,6 @@ export default {
 
 .btn-primary {
     border: 1px solid white;
-}
-.info-box {
-    background-color: var(--clr-other-green);
-    color: white;
-    padding: 30px;
-    font-size: 21px;
-}
-
-.info-box-2 {
-    background-color: var(--clr-other-green);
-    color: white;
-    padding: 30px;
-    font-size: 21px;
 }
 
 .restaurant-boxes {
