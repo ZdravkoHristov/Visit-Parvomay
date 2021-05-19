@@ -65,6 +65,27 @@ export default {
                         "https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png",
                     title: "Lorem Ipsum",
                     info: "Lorem ispum is simply dummy"
+                },
+                {
+                    id: 4,
+                    imgSrc:
+                        "https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png",
+                    title: "Lorem Ipsum",
+                    info: "Lorem ispum is simply dummy"
+                },
+                {
+                    id: 5,
+                    imgSrc:
+                        "https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png",
+                    title: "Lorem Ipsum",
+                    info: "Lorem ispum is simply dummy"
+                },
+                {
+                    id: 6,
+                    imgSrc:
+                        "https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png",
+                    title: "Lorem Ipsum",
+                    info: "Lorem ispum is simply dummy"
                 }
             ]
         };
@@ -96,6 +117,19 @@ export default {
         flex: 1.5;
         padding-left: 20px;
         max-width: 700px;
+
+        ::v-deep(.controls) {
+            color: var(--clr-other-green);
+            text-align: right;
+            font-size: 30px;
+
+            & > * {
+                margin-right: 5px;
+                cursor: pointer;
+            }
+
+            padding-right: 20px;
+        }
     }
 
     h2 {

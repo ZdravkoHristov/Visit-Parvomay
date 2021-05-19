@@ -3,6 +3,15 @@
         <div class="content" ref="content" :style="contentStyles">
             <slot name="items"></slot>
         </div>
+
+        <div class="controls">
+            <button @click="prev" :disabled="currentSlide === 0">
+                <i class="far fa-arrow-alt-circle-left "></i>
+            </button>
+            <button @click="next" :disabled="!hasNext">
+                <i class="far fa-arrow-alt-circle-right  "></i>
+            </button>
+        </div>
     </div>
 </template>
 <script>
@@ -17,23 +26,36 @@ export default {
             hasNext: false
         };
     },
-    updated() {
-        const itemsCount = this.items.length;
-        const itemWidth = this.items[0].offsetWidth;
-        const marginRight = Number(
-            window.getComputedStyle(this.items[0]).marginRight.slice(0, -2)
-        );
-        const totalWidth = itemsCount * (itemWidth + marginRight);
-        const passedWidth =
-            Math.abs((this.percentsAway / 100) * this.contentWidth) +
-            this.contentWidth;
 
-        this.hasNext = passedWidth <= totalWidth;
+    methods: {
+        prev() {
+            this.currentSlide--;
+        },
+        next() {
+            this.currentSlide++;
+        },
+        updateHasNext() {
+            const itemsCount = this.items.length;
+            const itemWidth = this.items[0].offsetWidth;
+            const marginRight = Number(
+                window.getComputedStyle(this.items[0]).marginRight.slice(0, -2)
+            );
+            console.log("marginRight: ", this.$refs.content.style.gap);
+            const totalWidth = itemsCount * (itemWidth + marginRight);
+            const passedWidth =
+                Math.abs((this.percentsAway / 100) * this.contentWidth) +
+                this.contentWidth;
+
+            this.hasNext = passedWidth <= totalWidth;
+        }
+    },
+
+    updated() {
+        this.updateHasNext();
     },
     mounted() {
         this.contentEl = this.$refs.content;
         this.items = this.contentEl.children;
-        console.log("items: ", this.items);
         this.contentWidth = this.contentEl.offsetWidth;
     },
     computed: {
@@ -41,8 +63,9 @@ export default {
             return -this.percentStep * this.currentSlide;
         },
         contentStyles() {
+            const count = (this.items || []).length;
             return {
-                gridTemplateColumns: `repeat(4, 200px)`
+                gridTemplateColumns: `repeat(${count}, 200px)`
             };
         }
     },
@@ -62,15 +85,24 @@ export default {
 .content {
     display: grid;
     color: #fff;
-    gap: 20px;
     margin: auto;
     padding: 1rem;
     margin-left: 0;
     transition: 0.4s ease-in;
+}
 
-    & > * {
-        cursor: pointer;
-        display: none;
+::v-deep(.content > *) {
+    margin-right: 20px;
+}
+
+button {
+    background: inherit;
+    color: inherit;
+    border: inherit;
+    font-size: inherit;
+
+    &[disabled] {
+        color: gray;
     }
 }
 </style>
