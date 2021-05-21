@@ -33,7 +33,7 @@
     transform: translate(-50%, -50%) rotate(-16deg);
 }
 .dark-overlay {
-    @include dark-overlay;
+    @include overlay;
 }
 .box {
     background-size: cover;

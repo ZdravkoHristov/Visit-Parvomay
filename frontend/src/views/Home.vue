@@ -112,7 +112,7 @@ export default {
 @use '../styles/partials/mixins' as *;
 
 .dark-overlay {
-    @include dark-overlay(0.2);
+    @include overlay(0.2);
 }
 
 .btn-primary {

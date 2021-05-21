@@ -5,15 +5,13 @@
             общината:
         </h2>
 
-        <div class="items">
+        <div class="items p-x-1">
             <div class="row">
                 <div class="col"></div>
                 <div class="col"></div>
                 <div class="col"></div>
             </div>
-
-            <place-infobox class="row info-box"></place-infobox>
-
+            <place-infobox class=" info-box"></place-infobox>
             <div class="row">
                 <div class="col">
                     <div class="overlay">
@@ -53,20 +51,18 @@ h2 {
 }
 
 .row {
-    width: 96%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 0 auto;
-    grid-gap: 5px;
-    margin-top: 8px;
+    grid-auto-rows: min(23vw, 300px);
+    grid-gap: 10px;
+    margin-bottom: 10px;
 }
 
 .col {
     background-image: url("https://mapio.net/images-p/49527160.jpg");
     background-size: cover;
     background-position: center;
-    height: 40vh;
-    width: 100%;
+
     position: relative;
     &:hover {
         .overlay {
@@ -76,11 +72,15 @@ h2 {
 }
 
 .info-box {
+    display: grid;
     grid-template-columns: 1fr 2fr;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-bottom: 10px;
 }
 
 .overlay {
-    @include overlay(0.3, var(--clr-other-green));
+    @include overlay(0.3, #009966);
     color: white;
     font-size: 27px;
     font-weight: 900;
