@@ -7,7 +7,20 @@
             </p>
         </div>
     </section>
+    <section class="dropdowns">
+        <dropdown>
+            </dropdown>    
+    </section>
 </template>
+<script>
+import Dropdown from "@/components/tourism/Dropdown.vue";
+export default {
+    components:{
+        Dropdown
+    } 
+};
+</script>
+
 <style lang="scss" scoped>
 .tourism-container{
    margin-left: auto;
@@ -41,5 +54,9 @@
     * {
         letter-spacing: 2px;
     }
-    //test//
+    .dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    max-width:1300px;
+    }
 </style>
