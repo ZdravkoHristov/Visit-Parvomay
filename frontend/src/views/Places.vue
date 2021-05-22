@@ -11,12 +11,16 @@
                 :info="activeInfo"
                 :style="infoBoxStyles"
                 v-if="infoBoxIndex > -1"
+                @goBack="goBack"
+                @goNext="goNext"
+                @close="close"
             ></place-infobox>
             <div
                 class="col"
                 @click="showInfo(j)"
                 v-for="j in items"
                 :key="j.id"
+                :style="{ 'background-image': `url('${j.imgSrc}')` }"
             >
                 <div class="overlay">
                     <h1 class="hover-text">
@@ -58,7 +62,7 @@ export default {
                 {
                     id: 1,
                     imgSrc: "https://mapio.net/images-p/49527160.jpg",
-                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    name: 'Ресторант "Хипноза"',
                     info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Pellentesque auctor lorem at tellus ornare condimentum. Quisque
                     lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
@@ -208,6 +212,16 @@ export default {
             const rowIndex = Math.trunc(item.id / this.itemsPerRow) + 1;
             this.activeIndex = item.id;
             this.infoBoxIndex = rowIndex;
+        },
+        goBack() {
+            this.activeIndex =
+                (this.items.length + this.activeIndex - 1) % this.items.length;
+        },
+        goNext() {
+            this.activeIndex = (this.activeIndex + 1) % this.items.length;
+        },
+        close() {
+            this.infoBoxIndex = -1;
         }
     },
 
@@ -247,6 +261,11 @@ export default {
         },
         activeInfo() {
             return this.items[this.activeIndex];
+        },
+        thumbnail(a) {
+            console.log(a);
+            return {};
+            // return {'background-image': `url(${this.items})`}
         }
     },
 
@@ -271,7 +290,6 @@ h2 {
 }
 
 .col {
-    background-image: url("https://mapio.net/images-p/49527160.jpg");
     background-size: cover;
     background-position: center;
     cursor: pointer;

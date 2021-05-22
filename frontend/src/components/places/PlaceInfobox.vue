@@ -3,10 +3,16 @@
         <div class="img-green-infobox" :style="img"></div>
         <div class="text-green-infobox">
             <div class="icons">
-                <i class="far fa-times-circle iconka"></i>
+                <i class="far fa-times-circle iconka" @click="close"></i>
                 <div class="dqsno">
-                    <i class="far fa-arrow-alt-circle-left iconka"></i>
-                    <i class="far fa-arrow-alt-circle-right iconka "></i>
+                    <i
+                        class="far fa-arrow-alt-circle-left iconka"
+                        @click="goBack"
+                    ></i>
+                    <i
+                        class="far fa-arrow-alt-circle-right iconka"
+                        @click="goNext"
+                    ></i>
                 </div>
             </div>
             <h2>{{ info.name }}</h2>
@@ -20,10 +26,25 @@
 <script>
 export default {
     props: ["info"],
+    emits: ["goBack", "goNext", "close"],
+
+    methods: {
+        goBack() {
+            this.$emit("goBack");
+        },
+
+        goNext() {
+            this.$emit("goNext");
+        },
+        close() {
+            this.$emit("close");
+        }
+    },
+
     computed: {
         img() {
             return {
-                "background-image": `url("${this.info.imgSrc}")`
+                "background-image": `url("${this.info?.imgSrc}")`
             };
         }
     }
