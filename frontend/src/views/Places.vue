@@ -6,15 +6,17 @@
         </h2>
 
         <div class="items p-x-1" :style="rowStyles">
-            <place-infobox
-                class="info-box"
-                :info="activeInfo"
-                :style="infoBoxStyles"
-                v-if="infoBoxIndex > -1"
-                @goBack="goBack"
-                @goNext="goNext"
-                @close="close"
-            ></place-infobox>
+            <transition name="info">
+                <place-infobox
+                    class="info-box"
+                    :info="activeInfo"
+                    :style="infoBoxStyles"
+                    v-if="infoBoxIndex > -1"
+                    @goBack="goBack"
+                    @goNext="goNext"
+                    @close="close"
+                ></place-infobox>
+            </transition>
             <div
                 class="col"
                 @click="showInfo(j)"
@@ -211,7 +213,8 @@ export default {
         showInfo(item) {
             const rowIndex = Math.trunc(item.id / this.itemsPerRow) + 1;
             this.activeIndex = item.id;
-            this.infoBoxIndex = rowIndex;
+            this.infoBoxIndex = -1;
+            setTimeout(() => (this.infoBoxIndex = rowIndex));
         },
         goBack() {
             this.activeIndex =
@@ -303,6 +306,7 @@ h2 {
 }
 
 .info-box {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-column-start: 1;
@@ -324,5 +328,28 @@ h2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.info-enter-from {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.info-enter-active {
+    transition: opacity 2s, transform 0.5s;
+}
+
+.info-enter-to {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.info-leave-active {
+    transition: 0.5s;
+}
+
+.info-leave-to {
+    opacity: 0;
+    transform: translateY(-100%);
 }
 </style>
