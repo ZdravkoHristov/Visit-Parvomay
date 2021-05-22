@@ -1,6 +1,6 @@
 <template>
     <div class="green-infobox">
-        <div class="img-green-infobox"></div>
+        <div class="img-green-infobox" :style="img"></div>
         <div class="text-green-infobox">
             <div class="icons">
                 <i class="far fa-times-circle iconka"></i>
@@ -9,25 +9,26 @@
                     <i class="far fa-arrow-alt-circle-right iconka "></i>
                 </div>
             </div>
-            <h2>Читалище "Св. Св. Кирил и Методий"</h2>
+            <h2>{{ info.name }}</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque auctor lorem at tellus ornare condimentum. Quisque
-                lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
-                facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
-                eu orci ac, condimentum scelerisque dolor. Aenean eleifend
-                facilisis velit. Etiam sodales orci quis gravida consectetur.
-                Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
-                Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
-                Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
-                Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
-                purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
-                enim velit in enim. Pellentesque id odio vitae mauris varius
-                iaculis vel non dolor. Aenean pretium varius risus a convallis.
+                {{ info.info }}
             </p>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: ["info"],
+    computed: {
+        img() {
+            return {
+                "background-image": `url("${this.info.imgSrc}")`
+            };
+        }
+    }
+};
+</script>
 
 <style lang="scss" scoped>
 h2 {
@@ -39,7 +40,6 @@ h2 {
     min-height: 300px;
 }
 .img-green-infobox {
-    background-image: url("https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png");
     background-size: cover;
     background-position: center;
     margin-right: 10px;
@@ -53,6 +53,7 @@ h2 {
 .iconka {
     margin: 10px 5px;
     font-size: 26px;
+    cursor: pointer;
 }
 .dqsno {
     margin-right: 10px;

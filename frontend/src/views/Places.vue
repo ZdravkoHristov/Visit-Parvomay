@@ -5,37 +5,251 @@
             общината:
         </h2>
 
-        <div class="items p-x-1">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-            </div>
-            <place-infobox class=" info-box"></place-infobox>
-            <div class="row">
-                <div class="col">
-                    <div class="overlay">
-                        <h1 class="hover-text">
-                            Читалище "Св. Св. Кирил и Методий"
-                        </h1>
-                    </div>
+        <div class="items p-x-1" :style="rowStyles">
+            <place-infobox
+                class="info-box"
+                :info="activeInfo"
+                :style="infoBoxStyles"
+                v-if="infoBoxIndex > -1"
+            ></place-infobox>
+            <div
+                class="col"
+                @click="showInfo(j)"
+                v-for="j in items"
+                :key="j.id"
+            >
+                <div class="overlay">
+                    <h1 class="hover-text">
+                        {{ j.name }}
+                    </h1>
                 </div>
-                <div class="col"></div>
-                <div class="col"></div>
-            </div>
-
-            <div class="row">
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
             </div>
         </div>
     </section>
 </template>
 
 <script>
-import PlaceInfobox from "@/components/places/PlaceInfobox";
+import PlaceInfobox from "../components/places/PlaceInfobox.vue";
 export default {
+    data() {
+        return {
+            itemsPerRow: 3,
+            infoBoxIndex: -1,
+            activeIndex: -1,
+            items: [
+                {
+                    id: 0,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                },
+                {
+                    id: 1,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                },
+                {
+                    id: 2,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                },
+                {
+                    id: 3,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                },
+                {
+                    id: 4,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                },
+                {
+                    id: 5,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                },
+                {
+                    id: 6,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                },
+                {
+                    id: 7,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                },
+                {
+                    id: 8,
+                    imgSrc: "https://mapio.net/images-p/49527160.jpg",
+                    name: 'Читалище "Св. Св. Кирил и Методий"',
+                    info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque auctor lorem at tellus ornare condimentum. Quisque
+                    lobortis velit nisi, quis hendrerit arcu auctor ut. Nulla
+                    facilisi. Donec et rutrum lacus. Aliquam lectus massa, ultricies
+                    eu orci ac, condimentum scelerisque dolor. Aenean eleifend
+                    facilisis velit. Etiam sodales orci quis gravida consectetur.
+                    Etiam pellentesque nibh aliquam, egestas metus et, maximus orci.
+                    Donec vel blandit elit. Ut in odio vel ligula dictum lobortis.
+                    Duis tincidunt est ex. Morbi nec erat ut lorem varius accumsan.
+                    Mauris suscipit fermentum est sed viverra. Sed sollicitudin,
+                    purus at imperdiet laoreet, quam elit fringilla mi, nec blandit
+                    enim velit in enim. Pellentesque id odio vitae mauris varius
+                    iaculis vel non dolor. Aenean pretium varius risus a convallis.`
+                }
+            ]
+        };
+    },
+
+    methods: {
+        showInfo(item) {
+            const rowIndex = Math.trunc(item.id / this.itemsPerRow) + 1;
+            this.activeIndex = item.id;
+            this.infoBoxIndex = rowIndex;
+        }
+    },
+
+    computed: {
+        rowsCount() {
+            return Math.ceil(this.items.length / this.itemsPerRow);
+        },
+        rowStyles() {
+            const styles = {
+                "grid-template-columns": `repeat(${this.itemsPerRow}, 1fr)`
+            };
+
+            if (this.infoBoxIndex === -1) {
+                styles[
+                    "grid-template-rows"
+                ] = `repeat(${this.rowsCount}, min(23vw, 300px))`;
+            } else if (this.infoBoxIndex === this.rowsCount) {
+                styles[
+                    "grid-template-rows"
+                ] = `repeat(${this.rowsCount}, min(23vw, 300px)) auto`;
+            } else {
+                styles["grid-template-rows"] = `repeat(${
+                    this.infoBoxIndex
+                }, min(23vw, 300px)) auto repeat(${this.rowsCount -
+                    this.infoBoxIndex}, min(23vw, 300px))`;
+            }
+
+            return styles;
+        },
+        infoBoxStyles() {
+            if (this.infoBoxIndex < 0) {
+                return {};
+            }
+            return {
+                "grid-row-start": this.infoBoxIndex + 1
+            };
+        },
+        activeInfo() {
+            return this.items[this.activeIndex];
+        }
+    },
+
     components: { PlaceInfobox }
 };
 </script>
@@ -50,10 +264,8 @@ h2 {
     margin-bottom: 3%;
 }
 
-.row {
+.items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: min(23vw, 300px);
     grid-gap: 10px;
     margin-bottom: 10px;
 }
@@ -62,6 +274,7 @@ h2 {
     background-image: url("https://mapio.net/images-p/49527160.jpg");
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 
     position: relative;
     &:hover {
@@ -82,7 +295,7 @@ h2 {
 .overlay {
     @include overlay(0.3, #009966);
     color: white;
-    font-size: 27px;
+    font-size: 2vw;
     font-weight: 900;
     letter-spacing: 5px;
     text-align: center;
