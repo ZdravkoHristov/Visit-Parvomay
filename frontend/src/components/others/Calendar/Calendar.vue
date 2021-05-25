@@ -20,6 +20,7 @@ import Header from "./Header.vue";
 import Body from "./Body.vue";
 
 export default {
+    emits: ["changeDate"],
     data() {
         const currentDate = new Date();
         const todayDate = new Date();
@@ -91,6 +92,7 @@ export default {
     methods: {
         changeDate(newDate) {
             this.currentDate = newDate;
+            this.$emit("changeDate", newDate);
         }
     },
     components: {

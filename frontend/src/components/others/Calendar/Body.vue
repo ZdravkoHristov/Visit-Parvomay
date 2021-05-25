@@ -39,6 +39,7 @@
 <script>
 export default {
     props: ["month", "currentYear", "currentDate", "todayDate"],
+    inject: ["celebrations"],
     data() {
         return {
             days: Array.from({ length: 5 }, () => {
@@ -115,7 +116,6 @@ export default {
         },
         updateDaysForPrint() {
             if (+this.month.number === 2) {
-                console.log(this.lastMonthDate, this.lastMonthDay);
                 this.daysForPrint =
                     this.lastMonthDate > 28 || this.lastMonthDay > 0
                         ? [...this.days]
@@ -173,6 +173,7 @@ export default {
 <style lang="scss" scoped>
 .calendar-body {
     $border: 3px solid var(--clr-other-green);
+    user-select: none;
     .separator {
         display: flex;
         color: var(--clr-other-green);
