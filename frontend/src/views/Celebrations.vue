@@ -8,7 +8,8 @@
             </article>
             <article class="month">
                 <h2>
-                    Празници през месец {{ months[selectedDate.getMonth()] }}
+                    Празници през месец
+                    {{ months[selectedDate.getMonth()].toLowerCase() }}
                 </h2>
 
                 <p v-for="i in monthCelebrations" :key="i.date">
@@ -119,5 +120,27 @@ main {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
+    grid-gap: 3rem;
+}
+
+h2 {
+    margin: 0.5rem 0;
+}
+
+p {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.today {
+    h2 {
+        color: var(--clr-other-green);
+    }
+}
+
+.month {
+    h2 {
+        color: var(--clr-other-red);
+    }
 }
 </style>
