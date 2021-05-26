@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        <div class="dark-overlay"></div>
+        <div class="overlay"></div>
         <div class="star">
             4
         </div>
@@ -32,13 +32,17 @@
     color: white;
     transform: translate(-50%, -50%) rotate(-16deg);
 }
-.dark-overlay {
-    @include overlay;
+.overlay {
+    @include overlay(
+        1,
+        linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(#1c1e1b, 0.5))
+    );
 }
 .box {
     background-size: cover;
-    border: 1px solid white;
-
+    border: 1px solid #626262;
+    position: relative;
+    box-shadow: 0 0 59px rgba(#1c1e1b, 0.38);
     p {
         color: white;
         font-size: 23px;

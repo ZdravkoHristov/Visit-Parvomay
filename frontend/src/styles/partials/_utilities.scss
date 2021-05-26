@@ -60,7 +60,7 @@
     text-decoration: none;
     display: inline-block;
     padding: 6px 12px;
-    border-radius: 12px;
+    border-radius: 5px;
     outline: none;
     border: 0;
     cursor: pointer;
@@ -68,8 +68,8 @@
 
 .btn {
     &-primary {
-        background-color: var(--clr-other-green);
-        color: #fff;
+        background-color: #058a5e;
+        color: var(--clr-light-gray1);
     }
 }
 
