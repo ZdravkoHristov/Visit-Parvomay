@@ -25,52 +25,45 @@
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        />
-                        <span class="title">Читалище</span>
+                        <div class='img'>
+                            <span class="title">Читалище</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
+                        <div class='img'>
+                            <span class="title">Читалище</span>
+                        </div>
                     </div>
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
+                        <div class='img'>
+                            <span class="title">Читалище</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
+                        <div class='img'>
+                            <span class="title">Читалище</span>
+                        </div>
                     </div>
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
+                        <div class='img'>
+                            <span class="title">Читалище</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <img
-                            src="https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png"
-                            alt="читалище Първомай"
-                        /><span class="title">Читалище</span>
+                        <div class='img'>
+                            <span class="title">Читалище</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,36 +100,50 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
+.img{
+    width: 100%;
+    height: 100%;
+    background: url('https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 .restaurant-boxes {
     background-color: var(--clr-dark-1);
+    padding: 2rem;
 }
 .button-restaurant {
     padding: 8px;
-    border: 1px solid #dadada;
+    border: 1px solid #dadada8f;
     border-radius: 5px;
-    margin-bottom: 5%;
-    margin-top: 10%;
     text-decoration: none;
 }
 
 .button-wrapper {
-    padding-right: 12%;
     justify-content: flex-end;
     display: flex;
+    max-width: 1050px;
+    margin: auto;
 }
 
 .boxes-holder {
-    display: flex;
-    justify-content: center;
-    & > * {
-        flex-basis: 200px;
-        min-height: 300px;
-        margin-right: 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 80%;
+    margin: auto;
+    grid-column-gap: 5%;
+    padding: 3rem 0;
+    height: 23rem;
 
-        top: 10vh;
-    }
-    .left {
-        margin-left: 10%;
+    .box {
+        background-size: cover;
+        border: 1px solid #626262;
+        position: relative;
+        box-shadow: 0 0 59px rgb(28 30 27 / 38%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;   
     }
 
     .hipnoza {
@@ -153,34 +160,35 @@ export default {
 
 .wcyf-container {
     display: flex;
-    padding: 1.2rem 0 1.2rem 3.5rem;
+    padding: 2rem 0;
     margin: auto;
-    max-width: 1300px;
+    max-width: 1100px;
 
     .info {
-        min-width: 300px;
+        width: 30%;
     }
 
     h2 {
         color: #058a5e;
         letter-spacing: 2px;
         margin-top: 5rem;
+        font-size: 1.8rem;
     }
 
     p {
-        font-size: 0.75em;
+        font-size: 1rem;
         margin: 30px 0 20px 0;
         line-height: 1.6;
         color: #2b2d28;
     }
 
     .images {
-        display: flex;
-        margin-left: -50px;
+        display: grid;
+        width: 70%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 3%;
 
         .col {
-            flex-basis: 200px;
-            margin-right: 30px;
 
             &:nth-child(1) {
                 margin-top: 15rem;
@@ -200,11 +208,12 @@ export default {
 
         .title {
             color: #fff;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 5px;
-            font-size: 20px;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 4%;
+            z-index: 1;
+            font-family: Book Antique, serif;
+            letter-spacing: 2px;
         }
 
         .overlay {
