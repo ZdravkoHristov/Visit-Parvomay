@@ -38,7 +38,7 @@
 <style lang="scss" scoped>
 @use '~@/styles/partials/mixins' as *;
 .router-link-active {
-    background: #117d59;
+    background: var(--clr-other-green);
 }
 
 .main-header {
@@ -62,12 +62,6 @@
     }
 
     .header-img {
-        // background-image: linear-gradient(
-        //         to bottom,
-        //         rgba(0, 0, 0, 0.5),
-        //         rgba(0, 0, 0, 0.3)
-        //     ),
-        //     url("~@/assets/parvomay/parvomay.jpg");
         background-image: url("~@/assets/parvomay/parvomay.jpg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -115,18 +109,19 @@
 }
 
 .main-nav {
-    background: #242421;
+    background: #2e302d;
     position: sticky;
     top: 0;
-    box-shadow: 0 -6px 10px -2px #1a1a1a;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.75);
     z-index: 999999;
 
     a {
+        font-family: "Book Antiqua", Ariel;
         flex: 1;
         text-align: center;
         text-decoration: none;
-        color: #f3f3f4;
-        font-size: 23px;
+        color: var(--clr-light-gray2);
+        font-size: 26px;
         padding: 22px;
         display: inline-block;
 
@@ -138,7 +133,7 @@
     }
 
     a + a {
-        border-left: 1px solid #848484;
+        border-left: 1px #61655a solid;
     }
 }
 </style>
