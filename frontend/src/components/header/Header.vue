@@ -2,6 +2,7 @@
     <header class="main-header">
         <div class="grey-box"></div>
         <div class="header-img">
+            <div class="overlay"></div>
             <h2>ЛОГО</h2>
             <div class="flex-cy header-text">
                 <h1>Община <br />Първомай</h1>
@@ -35,6 +36,7 @@
 </template>
 
 <style lang="scss" scoped>
+@use '~@/styles/partials/mixins' as *;
 .router-link-active {
     background: #117d59;
 }
@@ -51,24 +53,46 @@
     }
 
     h1 {
-        color: #f3f3f3;
+        color: var(--clr-light-gray2);
         font-size: var(--txt-lg);
+        line-height: var(--txt-lg);
         left: -4rem;
         position: relative;
+        letter-spacing: 3.2px;
     }
 
     .header-img {
-        background-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.5),
-                rgba(0, 0, 0, 0.3)
-            ),
-            url("~@/assets/parvomay/parvomay.jpg");
+        // background-image: linear-gradient(
+        //         to bottom,
+        //         rgba(0, 0, 0, 0.5),
+        //         rgba(0, 0, 0, 0.3)
+        //     ),
+        //     url("~@/assets/parvomay/parvomay.jpg");
+        background-image: url("~@/assets/parvomay/parvomay.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
         height: 100%;
         width: 80%;
-        background-position: center;
         display: flex;
         flex-direction: column;
+
+        .overlay {
+            @include overlay(
+                1,
+                linear-gradient(
+                    to bottom,
+                    rgba(#1c1e1b, 0.4),
+                    rgba(#238a65, 0.5)
+                )
+            );
+            z-index: 1;
+        }
+
+        * {
+            z-index: 2;
+        }
     }
 
     .header-text {
@@ -81,7 +105,8 @@
     }
 
     p {
-        font-size: min(1.8vw, 20px);
+        letter-spacing: 2.5px;
+        font-size: calc(var(--txt-lg) / 3);
         color: var(--clr-light-gray2);
         padding-right: 100px;
         text-align: center;
