@@ -121,7 +121,7 @@
         text-align: center;
         text-decoration: none;
         color: var(--clr-light-gray2);
-        font-size: 1.7rem;
+        font-size: 2vw;
         padding: 2% 1.5%;
         display: inline-block;
 
