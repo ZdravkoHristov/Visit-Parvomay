@@ -43,7 +43,7 @@
 
 .main-header {
     height: 400px;
-    min-height: 50vh;
+    min-height: 80vh;
     width: 100%;
     display: flex;
 
@@ -58,7 +58,7 @@
         line-height: var(--txt-lg);
         left: -4rem;
         position: relative;
-        letter-spacing: 3.2px;
+        letter-spacing: 4px;
     }
 
     .header-img {
@@ -121,8 +121,8 @@
         text-align: center;
         text-decoration: none;
         color: var(--clr-light-gray2);
-        font-size: 26px;
-        padding: 22px;
+        font-size: 1.7rem;
+        padding: 2% 1.5%;
         display: inline-block;
 
         &:hover {
