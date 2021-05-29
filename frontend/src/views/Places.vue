@@ -34,7 +34,7 @@
             общината:
         </h2>
 
-        <div class="items" :style="rowStyles">
+        <div class="items" :style="rowStyles" :ref="items">
             <transition name="info">
                 <place-infobox
                     class="info-box"
@@ -52,6 +52,7 @@
                 v-for="j in items"
                 :key="j.id"
                 :style="{ 'background-image': `url('${j.imgSrc}')` }"
+                :class="isActive(j.id)"
             >
                 <div class="overlay">
                     <h1 class="hover-text">
@@ -307,6 +308,7 @@ export default {
         },
         close() {
             this.infoBoxIndex = -1;
+            this.activeIndex = -1;
         }
     },
 
@@ -346,8 +348,13 @@ export default {
         },
         activeInfo() {
             return this.items[this.activeIndex];
+        },
+        isActive() {
+            const activeIndex = this.activeIndex;
+            return id => ({ active: id === activeIndex });
         }
     },
+
     components: {
         InfoBox,
         PlaceBox,
@@ -422,7 +429,8 @@ p {
     cursor: pointer;
 
     position: relative;
-    &:hover {
+    &:hover,
+    &.active {
         .overlay {
             opacity: 1;
         }
