@@ -294,6 +294,7 @@ export default {
     },
     methods: {
         showInfo(item) {
+            if (this.activeIndex === item.id) return;
             const rowIndex = Math.trunc(item.id / this.itemsPerRow) + 1;
             this.activeIndex = item.id;
             this.infoBoxIndex = -1;
@@ -427,7 +428,7 @@ p {
     background-size: cover;
     background-position: center;
     cursor: pointer;
-
+    user-select: none;
     position: relative;
     &:hover,
     &.active {
