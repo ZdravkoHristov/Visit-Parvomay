@@ -5,10 +5,10 @@
         </div>
 
         <div class="controls">
-            <button @click="prev" :disabled="currentSlide === 0" class='btn'>
+            <button @click="prev" :disabled="currentSlide === 0" class="btn">
                 <i class="far fa-arrow-alt-circle-left "></i>
             </button>
-            <button @click="next" :disabled="!hasNext" class='btn'>
+            <button @click="next" :disabled="!hasNext" class="btn">
                 <i class="far fa-arrow-alt-circle-right  "></i>
             </button>
         </div>
@@ -19,7 +19,7 @@ export default {
     data() {
         return {
             currentSlide: 0,
-            percentStep: 60,
+
             contentEl: null,
             items: null,
             contentWidth: null,
@@ -37,11 +37,14 @@ export default {
         updateHasNext() {
             const itemsCount = this.items.length;
             const itemWidth = this.items[0].offsetWidth;
-            const marginRight = Number(
-                window.getComputedStyle(this.items[0]).marginRight.slice(0, -2)
+            const gridGap = Number(
+                window
+                    .getComputedStyle(this.$refs.content)
+                    .gridColumnGap.slice(0, -1)
             );
-            console.log("marginRight: ", this.$refs.content.style.gap);
-            const totalWidth = itemsCount * (itemWidth + marginRight);
+            const rightSpace = (2 * gridGap) / 100;
+
+            const totalWidth = itemsCount * (itemWidth + rightSpace);
             const passedWidth =
                 Math.abs((this.percentsAway / 100) * this.contentWidth) +
                 this.contentWidth;
