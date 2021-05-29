@@ -3,7 +3,6 @@
         <div class="grey-box"></div>
         <div class="header-img">
             <div class="overlay"></div>
-            <h2>ЛОГО</h2>
             <div class="flex-cy header-text">
                 <h1>Община <br />Първомай</h1>
                 <p class="flex-ex">
@@ -124,6 +123,7 @@
         font-size: 2vw;
         padding: 2% 1.5%;
         display: inline-block;
+        transition: ease-in-out 1s;
 
         &:hover {
             background: var(--clr-other-green);
