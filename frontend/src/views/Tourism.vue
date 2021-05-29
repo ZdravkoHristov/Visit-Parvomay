@@ -23,14 +23,23 @@ export default {
 
 <style lang="scss" scoped>
 .tourism-container{
-   margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
     max-width:1300px;
     &>* {flex:1;}
     h2 {
-    font-size:2rem;
+    font-size:2.8rem;
     color:var(--clr-other-green);
     margin-bottom:20px;
+    }
+    p {
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .img-container {
         transform: scale(0.8);
