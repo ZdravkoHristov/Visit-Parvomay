@@ -5,10 +5,10 @@
         </div>
 
         <div class="controls">
-            <button @click="prev" :disabled="currentSlide === 0">
+            <button @click="prev" :disabled="currentSlide === 0" class='btn'>
                 <i class="far fa-arrow-alt-circle-left "></i>
             </button>
-            <button @click="next" :disabled="!hasNext">
+            <button @click="next" :disabled="!hasNext" class='btn'>
                 <i class="far fa-arrow-alt-circle-right  "></i>
             </button>
         </div>
@@ -65,7 +65,7 @@ export default {
         contentStyles() {
             const count = (this.items || []).length;
             return {
-                gridTemplateColumns: `repeat(${count}, 200px)`
+                gridTemplateColumns: `repeat(${count}, 240px)`
             };
         }
     },
@@ -84,15 +84,12 @@ export default {
 }
 .content {
     display: grid;
+    grid-gap: 2%;
     color: #fff;
     margin: auto;
     padding: 1rem;
     margin-left: 0;
     transition: 0.4s ease-in;
-}
-
-::v-deep(.content > *) {
-    margin-right: 20px;
 }
 
 button {

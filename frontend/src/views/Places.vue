@@ -34,7 +34,7 @@
             общината:
         </h2>
 
-        <div class="items p-x-1" :style="rowStyles">
+        <div class="items" :style="rowStyles">
             <transition name="info">
                 <place-infobox
                     class="info-box"
@@ -363,29 +363,30 @@ export default {
     background-color: var(--clr-dark-1);
     color: #fff;
     display: flex;
-    padding: 1.5rem;
-    padding-right: 0;
+    padding: 1.5rem 3rem;
 
     .info {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        max-width: 30%;
     }
 
     .carousel-wrapper {
         flex: 1.5;
         padding-left: 20px;
-        max-width: 700px;
+        max-width: 70%;
 
         ::v-deep(.controls) {
             color: var(--clr-other-green);
             text-align: right;
-            font-size: 30px;
+            font-size: 1.8rem;
 
             & > * {
                 margin-right: 5px;
                 cursor: pointer;
+                padding: 0.1rem;
             }
 
             padding-right: 20px;
@@ -397,15 +398,22 @@ h2 {
     text-align: center;
     margin-top: 3%;
     color: var(--clr-other-green);
-    font-size: xxx-large;
+    font-size: 2.6rem;
     letter-spacing: 4px;
     margin-bottom: 3%;
 }
 
+p {
+    font-size: 1.3rem;
+    color: #dadada;
+    letter-spacing: 1px;
+}
+
 .items {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 1rem;
     margin-bottom: 10px;
+    padding: 0 3rem;
 }
 
 .col {
@@ -427,11 +435,10 @@ h2 {
     grid-template-columns: 1fr 2fr;
     grid-column-start: 1;
     grid-column-end: 4;
-    margin-bottom: 10px;
 }
 
 .overlay {
-    @include overlay(0.3, #009966);
+    @include overlay(0.7, #009966);
     color: white;
     font-size: 2vw;
     font-weight: 900;
@@ -439,11 +446,13 @@ h2 {
     text-align: center;
     opacity: 0;
     transition: 0.5s ease-out;
+    padding: 0 1rem;
 }
 .hover-text {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 2.8vw;
 }
 
 .info-enter-from {
