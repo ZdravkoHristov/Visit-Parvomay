@@ -124,6 +124,7 @@
         font-size: 2vw;
         padding: 2% 1.5%;
         display: inline-block;
+        transition: ease-in-out 1s;
 
         &:hover {
             background: var(--clr-other-green);
