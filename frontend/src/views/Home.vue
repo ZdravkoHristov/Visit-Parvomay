@@ -25,7 +25,7 @@
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <div class='img'>
+                        <div class="img">
                             <span class="title">Читалище</span>
                         </div>
                     </div>
@@ -33,27 +33,13 @@
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <div class='img'>
+                        <div class="img">
                             <span class="title">Читалище</span>
                         </div>
                     </div>
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <div class='img'>
-                            <span class="title">Читалище</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="img-holder">
-                        <div class="overlay"></div>
-                        <div class='img'>
-                            <span class="title">Читалище</span>
-                        </div>
-                    </div>
-                    <div class="img-holder">
-                        <div class="overlay"></div>
-                        <div class='img'>
+                        <div class="img">
                             <span class="title">Читалище</span>
                         </div>
                     </div>
@@ -61,7 +47,21 @@
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <div class='img'>
+                        <div class="img">
+                            <span class="title">Читалище</span>
+                        </div>
+                    </div>
+                    <div class="img-holder">
+                        <div class="overlay"></div>
+                        <div class="img">
+                            <span class="title">Читалище</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="img-holder">
+                        <div class="overlay"></div>
+                        <div class="img">
                             <span class="title">Читалище</span>
                         </div>
                     </div>
@@ -100,10 +100,11 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
-.img{
+.img {
     width: 100%;
     height: 100%;
-    background: url('https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png') no-repeat center center;
+    background: url("https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png")
+        no-repeat center center;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -123,7 +124,7 @@ export default {
 .button-wrapper {
     justify-content: flex-end;
     display: flex;
-    max-width: 1050px;
+    max-width: 80%;
     margin: auto;
 }
 
@@ -143,7 +144,7 @@ export default {
         box-shadow: 0 0 59px rgb(28 30 27 / 38%);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;   
+        justify-content: space-between;
     }
 
     .hipnoza {
@@ -190,7 +191,6 @@ export default {
         grid-gap: 3%;
 
         .col {
-
             &:nth-child(1) {
                 margin-top: 15rem;
             }
