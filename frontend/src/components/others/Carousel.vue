@@ -18,12 +18,13 @@
 export default {
     data() {
         return {
+            hasNext: true,
             currentSlide: 0,
-
+            itemWidth: 240,
             contentEl: null,
             items: null,
             contentWidth: null,
-            hasNext: false
+            lastMovedBy: 0
         };
     },
 
@@ -34,32 +35,26 @@ export default {
         next() {
             this.currentSlide++;
         },
-        updateHasNext() {
-            const itemsCount = this.items.length;
-            const itemWidth = this.items[0].offsetWidth;
-            const gridGap = Number(
+
+        initVars() {
+            this.contentEl = this.$refs.content;
+            this.items = this.contentEl.children;
+            this.contentWidth = this.contentEl.offsetWidth;
+
+            this.rightSpace = Number(
                 window
-                    .getComputedStyle(this.$refs.content)
-                    .gridColumnGap.slice(0, -1)
+                    .getComputedStyle(this.contentEl)
+                    .gridColumnGap.slice(0, -2)
             );
-            const rightSpace = (2 * gridGap) / 100;
 
-            const totalWidth = itemsCount * (itemWidth + rightSpace);
-            const passedWidth =
-                Math.abs((this.percentsAway / 100) * this.contentWidth) +
-                this.contentWidth;
-
-            this.hasNext = passedWidth <= totalWidth;
+            this.fitCount = Math.floor(
+                (this.contentWidth - 4 * this.rightSpace) / this.itemWidth
+            );
         }
     },
 
-    updated() {
-        this.updateHasNext();
-    },
     mounted() {
-        this.contentEl = this.$refs.content;
-        this.items = this.contentEl.children;
-        this.contentWidth = this.contentEl.offsetWidth;
+        this.initVars();
     },
     computed: {
         percentsAway() {
@@ -68,13 +63,49 @@ export default {
         contentStyles() {
             const count = (this.items || []).length;
             return {
-                gridTemplateColumns: `repeat(${count}, 240px)`
+                gridTemplateColumns: `repeat(${count}, ${this.itemWidth}px)`
             };
+        },
+        itemsCount() {
+            return this.items?.length || 0;
         }
     },
     watch: {
-        currentSlide() {
-            this.$refs.content.style.marginLeft = this.percentsAway + "%";
+        currentSlide(newValue, prevValue) {
+            const direction = newValue > prevValue ? -1 : 1;
+            const margin = +this.contentEl.style.marginLeft.slice(0, -2) || 0;
+            let moveBy = this.itemWidth + this.rightSpace;
+            const itemsLeft = this.items.length - newValue;
+
+            if (itemsLeft === this.fitCount && direction === -1) {
+                const totalContentWidth =
+                    (this.itemWidth + this.rightSpace) * this.items.length -
+                    this.rightSpace * 2 -
+                    this.contentWidth -
+                    margin;
+
+                const lastEl = this.contentEl.children[
+                    this.contentEl.children.length - 1
+                ];
+                const lastElRight = lastEl.getBoundingClientRect().right;
+
+                console.log(totalContentWidth, lastElRight);
+                moveBy = totalContentWidth - lastElRight;
+                this.lastMovedBy = moveBy;
+                this.hasNext = false;
+            } else {
+                this.hasNext = true;
+            }
+
+            if (
+                direction === 1 &&
+                this.items.length - newValue === this.fitCount + 1
+            ) {
+                moveBy = this.lastMovedBy;
+            }
+
+            this.contentEl.style.marginLeft =
+                margin + moveBy * direction + "px";
         }
     }
 };
@@ -87,10 +118,10 @@ export default {
 }
 .content {
     display: grid;
-    grid-gap: 2%;
+    grid-gap: 23px;
     color: #fff;
     margin: auto;
-    padding: 1rem;
+    padding: 1rem 0;
     margin-left: 0;
     transition: 0.4s ease-in;
 }
