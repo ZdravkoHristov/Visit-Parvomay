@@ -9,9 +9,10 @@
         <div class="rating">
             <p>Ресторант<br> "Хипоноза"</p>
             <div class="icon-holder">
-             <slot name="icons">   
-
-            </slot>
+            <i class="fas fa-long-arrow-alt-up icon-size green"></i>
+            <i class="fas fa-star icon-size green"></i>
+            <h3>50</h3>
+            <i class="fas fa-utensils icon-size red"></i>
         </div>
         </div>
 
@@ -83,7 +84,7 @@ display: flex;
 
 .icon-holder{
         display: flex;
-    margin: 4% 0% 0% 3%;
+    margin: 4% 0% 0% 20%;
 
                 h3{
                     font-size: 16px;
