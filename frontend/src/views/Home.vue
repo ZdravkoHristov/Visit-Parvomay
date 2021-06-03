@@ -13,7 +13,7 @@
 
                 <p>
                     Подбрали сме Ви едни от най-интересните забележителности,
-                    които може да намерите на територията на община Първомай
+                    които може да намерите на територията на община Първомай.
                 </p>
 
                 <router-link class="btn-primary" to="places"
@@ -25,7 +25,7 @@
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <div class='img'>
+                        <div class="img">
                             <span class="title">Читалище</span>
                         </div>
                     </div>
@@ -33,27 +33,13 @@
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <div class='img'>
+                        <div class="img">
                             <span class="title">Читалище</span>
                         </div>
                     </div>
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <div class='img'>
-                            <span class="title">Читалище</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="img-holder">
-                        <div class="overlay"></div>
-                        <div class='img'>
-                            <span class="title">Читалище</span>
-                        </div>
-                    </div>
-                    <div class="img-holder">
-                        <div class="overlay"></div>
-                        <div class='img'>
+                        <div class="img">
                             <span class="title">Читалище</span>
                         </div>
                     </div>
@@ -61,7 +47,21 @@
                 <div class="col">
                     <div class="img-holder">
                         <div class="overlay"></div>
-                        <div class='img'>
+                        <div class="img">
+                            <span class="title">Читалище</span>
+                        </div>
+                    </div>
+                    <div class="img-holder">
+                        <div class="overlay"></div>
+                        <div class="img">
+                            <span class="title">Читалище</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="img-holder">
+                        <div class="overlay"></div>
+                        <div class="img">
                             <span class="title">Читалище</span>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
 
     <info-box :showIcon="false" class="info-shadow">
         Не стойте гладни, а опитайте специалитетите на нашите ресторанти! Също
-        така не пропускайте чаша топло кафе в уютните ни заведения!
+        така не пропускайте чаша топло кафе в уютните ни заведени!
     </info-box>
 
     <section class="restaurant-boxes ">
@@ -100,10 +100,11 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
-.img{
+.img {
     width: 100%;
     height: 100%;
-    background: url('https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png') no-repeat center center;
+    background: url("https://chitalishteparvomay1894.com/wp-content/uploads/2019/01/cropped-zaglavna.png")
+        no-repeat center center;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -123,7 +124,7 @@ export default {
 .button-wrapper {
     justify-content: flex-end;
     display: flex;
-    max-width: 1050px;
+    max-width: 80%;
     margin: auto;
 }
 
@@ -143,7 +144,7 @@ export default {
         box-shadow: 0 0 59px rgb(28 30 27 / 38%);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;   
+        justify-content: space-between;
     }
 
     .hipnoza {
@@ -180,6 +181,7 @@ export default {
         margin: 30px 0 20px 0;
         line-height: 1.6;
         color: #2b2d28;
+        letter-spacing: 1px;
     }
 
     .images {
@@ -189,7 +191,6 @@ export default {
         grid-gap: 3%;
 
         .col {
-
             &:nth-child(1) {
                 margin-top: 15rem;
             }

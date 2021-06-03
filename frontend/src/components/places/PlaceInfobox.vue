@@ -63,18 +63,21 @@ h2 {
 .img-green-infobox {
     background-size: cover;
     background-position: center;
-    margin-right: 10px;
 }
 .text-green-infobox {
-    padding-bottom: 10px;
+    padding: 0.5rem 1rem 1rem;
     width: 100%;
     color: white;
 }
 
 .iconka {
     margin: 10px 5px;
-    font-size: 26px;
+    font-size: 1.8rem;
     cursor: pointer;
+    transition: ease-in-out 0.5s;
+    &:hover {
+        transform: scale(1.2, 1.2);
+    }
 }
 .dqsno {
     margin-right: 10px;
@@ -86,5 +89,11 @@ p {
 .icons {
     display: flex;
     justify-content: space-between;
+    i {
+        transition: ease-in-out 0.5s;
+        &:hover {
+            color: #ccebe0;
+        }
+    }
 }
 </style>

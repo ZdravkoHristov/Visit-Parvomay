@@ -22,21 +22,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .image {
     background-size: cover;
     background-position: center;
-    height: 200px;
+    height: 300px;
 }
 
 .text {
     background-color: var(--clr-light-gray2);
     color: #000;
-    padding: 0.25rem 1.2rem;
+    padding: 1rem 0.5rem;
 }
 
 .title {
     color: var(--clr-other-green);
-    font-size: 18px;
+    font-size: 1.2rem;
     margin-bottom: 5px;
 }
 </style>
