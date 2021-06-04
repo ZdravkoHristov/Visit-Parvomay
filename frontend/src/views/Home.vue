@@ -135,7 +135,7 @@ export default {
     margin: auto;
     grid-column-gap: 5%;
     padding: 3rem 0;
-    height: 23rem;
+    height: 25rem;
 
     .box {
         background-size: cover;
