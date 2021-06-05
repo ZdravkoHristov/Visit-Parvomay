@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1920" style="enable-background:new 0 0 1920 1920;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#009966;stroke:#009966;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#009966;stroke-width:10;stroke-miterlimit:10;}
+	.st2{display:none;}
+	.st3{display:inline;fill:#009966;stroke:#009966;stroke-width:40;stroke-miterlimit:10;}
+</style>
+<g id="landmark2">
+	<path class="st0" d="M1096.1,353.4v559c0,44.4,50.9,69.5,86.1,42.5L1547,675.4c28-21.4,28-63.6,0-85l-364.8-279.5
+		C1147,283.9,1096.1,309,1096.1,353.4z"/>
+	<path class="st0" d="M1540.3,1736H462.6C581.5,1581,766,1478.7,975,1470.4V326.7c0-14.8,10.7-27.7,25.5-27.7h0.8
+		c14.8,0,27.7,12.9,27.7,27.7v1143.7C1237,1478.7,1421.6,1581,1540.3,1736z"/>
+	<polyline class="st1" points="1539,1736 462.6,1736 462,1736 	"/>
+</g>
+<g id="landmark1" class="st2">
+	<path class="st3" d="M984.7,332c-186.4,0-337.5,151.1-337.5,337.5s337.5,655.6,337.5,655.6s337.5-469.2,337.5-655.6
+		S1171.1,332,984.7,332z M984.7,813.5c-79.5,0-144-64.5-144-144s64.5-144,144-144c79.5,0,144,64.5,144,144S1064.2,813.5,984.7,813.5
+		z"/>
+	<ellipse class="st3" cx="984.7" cy="1524.6" rx="309" ry="43.5"/>
+</g>
+</svg>

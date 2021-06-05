@@ -3,7 +3,8 @@
         Използвайте стрелките, за да разгледате всички паркове и <br />площадки
         на територията на община Първомай
     </info-box>
-    <section class="remarkable-places">
+    <section class="nature-places">
+        <div class="compass"></div>
         <div class="info ta-c">
             <h2>Разходка сред природата</h2>
             <p>
@@ -28,7 +29,9 @@
     <info-box>
         Моля, кликнете върху някоя кутийка
     </info-box>
-    <section>
+    <section class="remarkable-places">
+        <div class="landmark"></div>
+        <div class="landmark"></div>
         <h2>
             Забележителностите на<br />
             общината:
@@ -367,11 +370,25 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
-.remarkable-places {
+.nature-places {
     background-color: var(--clr-dark-1);
     color: #fff;
     display: flex;
     padding: 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+
+    .compass {
+        position: absolute;
+        top: -6%;
+        left: 9%;
+        width: 36%;
+        opacity: 0.1;
+        z-index: 0;
+        height: 100%;
+        background: url(/img/compass.83748661.svg) no-repeat center center;
+        background-size: cover;
+    }
 
     .info {
         flex: 1;
@@ -379,6 +396,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         max-width: 30%;
+        z-index: 1;
     }
 
     .carousel-wrapper {
@@ -402,14 +420,40 @@ export default {
     }
 }
 
+.remarkable-places {
+    padding: 3% 0;
+    position: relative;
+    overflow: hidden;
+    .landmark {
+        position: absolute;
+        height: 50%;
+        &:first-child {
+            background: url("../assets/vectors/landmark1.svg") no-repeat center center;
+            left: -13%;
+            top: -8%;
+            width: 30%;
+            opacity: 0.1;
+        }
+        &:nth-child(2) {
+            background: url("../assets/vectors/landmark2.svg") no-repeat center center;
+            right: -8%;
+            bottom: -10%;
+            width: 29%;
+            height: 44%;
+            opacity: 0.1;
+        }
+    }
+    
+}
+
 h2 {
     text-align: center;
-    margin-top: 3%;
     color: var(--clr-other-green);
     font-size: 2.6rem;
     letter-spacing: 4px;
-    margin-bottom: 3%;
+    margin-bottom:3%;
 }
+
 
 p {
     font-size: 1.3rem;

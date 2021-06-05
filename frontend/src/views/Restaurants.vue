@@ -162,9 +162,9 @@ export default {
     top: -27%;
     width: 51%;
     height: 100%;
-    background: url(/img/burger.a2c681cf.svg) no-repeat center center;
+    background: url(../assets/vectors/burger.svg) no-repeat center center;
     background-size: cover;
-    opacity: 0.2;
+    opacity: 0.1;
 }
 
 .box-holder {

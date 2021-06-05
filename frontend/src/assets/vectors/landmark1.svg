@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1920" style="enable-background:new 0 0 1920 1920;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:none;stroke:#009966;stroke-width:40;stroke-miterlimit:10;}
+	.st2{fill:#009966;stroke:#009966;stroke-width:40;stroke-miterlimit:10;}
+</style>
+<g id="landmark2" class="st0">
+	<circle class="st1" cx="1008.7" cy="1821.6" r="382.5"/>
+	<line class="st1" x1="1008.7" y1="692" x2="1008.7" y2="1454.1"/>
+</g>
+<g id="landmark1">
+	<path class="st2" d="M984.7,332c-186.4,0-337.5,151.1-337.5,337.5s337.5,655.6,337.5,655.6s337.5-469.2,337.5-655.6
+		S1171.1,332,984.7,332z M984.7,813.5c-79.5,0-144-64.5-144-144s64.5-144,144-144c79.5,0,144,64.5,144,144S1064.2,813.5,984.7,813.5
+		z"/>
+	<ellipse class="st2" cx="984.7" cy="1524.6" rx="309" ry="43.5"/>
+</g>
+</svg>

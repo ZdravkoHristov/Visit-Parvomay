@@ -167,9 +167,9 @@ export default {
         z-index: 0;
         width: 63%;
         height: 100%;
-        background: url(/img/lens.18dd99a6.svg) no-repeat center center;
+        background: url("../assets/vectors/lens.svg") no-repeat center center;
         background-size: cover;
-        opacity: 0.2;
+        opacity: 0.1;
     }
 }
 
