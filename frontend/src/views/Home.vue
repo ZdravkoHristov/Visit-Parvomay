@@ -245,5 +245,21 @@ export default {
     box-shadow: 0 5px rgba(#1c1e1b, 0.21);
 }
 
-.info-box {font-family: "Book Antiqua", serif}
+.info-box {font-family: "Book Antiqua", serif;}
+.info-box p {width: 80%;}
+
+/* ----------------------------------------------------------------------------
+ -------------------------------- RESPONSIVE ----------------------------------
+ ------------------------------------------------------------------------------ */
+
+@media(max-width: 1150px) {
+    .wcyf-container {
+        max-width: 900px;
+        padding: 2rem;
+
+        .info {width: 35%;}
+        .images{width: 65%;}
+    }
+    .boxes-holder{max-width: 85%;}
+}
 </style>

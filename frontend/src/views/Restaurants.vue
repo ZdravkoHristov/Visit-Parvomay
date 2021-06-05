@@ -1,5 +1,5 @@
 <template>
-    <InfoBox>Вижте най-популярните заведения сред<br> посетителите на сайта</InfoBox>
+    <InfoBox>Вижте най-популярните заведения сред посетителите на сайта</InfoBox>
     <section class="first-section">
         <div class="burger"></div>
 		<div class="box-holder">
@@ -305,4 +305,22 @@ export default {
     }
 }
 
+/* ----------------------------------------------------------------------------
+ -------------------------------- RESPONSIVE ----------------------------------
+ ------------------------------------------------------------------------------ */
+
+@media(max-width: 1150px) {
+    .first-section{height:80vh;}
+    .box-holder {width: 80%;}
+    .restaurants-holder {
+        padding: 5% 3% 12%;
+        grid-gap: 4% 3%;
+        .box {
+            height: 20rem;
+        }
+    }
+    .comment-box .top-information div p:first-child{font-size: 1.3rem;}
+    .comment-box .top-information div p:nth-child(2){font-size: 1.6rem;}
+    .comment p {font-size: 0.8rem;}
+}
 </style>

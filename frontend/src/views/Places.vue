@@ -1,6 +1,6 @@
 <template>
     <info-box>
-        Използвайте стрелките, за да разгледате всички паркове и <br />площадки
+        Използвайте стрелките, за да разгледате всички паркове и площадки
         на територията на община Първомай
     </info-box>
     <section class="nature-places">
@@ -33,7 +33,7 @@
         <div class="landmark"></div>
         <div class="landmark"></div>
         <h2>
-            Забележителностите на<br />
+            Забележителностите на
             общината:
         </h2>
 
@@ -386,7 +386,7 @@ export default {
         opacity: 0.1;
         z-index: 0;
         height: 100%;
-        background: url(/img/compass.83748661.svg) no-repeat center center;
+        background: url(../assets/vectors/compass.svg) no-repeat center center;
         background-size: cover;
     }
 
@@ -424,6 +424,7 @@ export default {
     padding: 3% 0;
     position: relative;
     overflow: hidden;
+    h2 {width: 60%;}
     .landmark {
         position: absolute;
         height: 50%;
@@ -451,7 +452,7 @@ h2 {
     color: var(--clr-other-green);
     font-size: 2.6rem;
     letter-spacing: 4px;
-    margin-bottom:3%;
+    margin: 0 auto 3%;
 }
 
 
@@ -529,5 +530,22 @@ p {
 .info-leave-to {
     opacity: 0;
     transform: translateY(-100%);
+}
+
+/* ----------------------------------------------------------------------------
+ -------------------------------- RESPONSIVE ----------------------------------
+ ------------------------------------------------------------------------------ */
+
+@media(max-width: 1150px) {
+    .nature-places{
+        padding: 1.5rem 2rem;
+        .info{max-width: 40%;}
+        .carousel-wrapper {
+            max-width: 60%;
+        }
+        .compass{width:55%; height:110%; top: -18%;}
+    }
+    h2 {font-size: 2.2rem;}
+    p {font-size: 1.1rem;}
 }
 </style>

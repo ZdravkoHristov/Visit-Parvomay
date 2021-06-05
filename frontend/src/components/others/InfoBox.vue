@@ -29,7 +29,7 @@ export default {
     font-family: Roboto, Arial, sans-serif;
 
     p {
-        width: 80%;
+        width: 60%;
         margin: auto;
     }
 
@@ -50,6 +50,24 @@ export default {
             font-size: 1rem;
             font-weight: 600;
         }
+    }
+}
+
+/* ----------------------------------------------------------------------------
+ -------------------------------- RESPONSIVE ----------------------------------
+ ------------------------------------------------------------------------------ */
+
+@media(max-width: 1150px) {
+    .info-box{
+        font-size: 1.15rem;
+        padding: 25px 30px;
+        .info-icon {
+            width: 2rem;
+            height: 2rem;
+            padding: 0.7rem;
+            p {font-size: 0.8rem;}
+        }
+        p {width: 80%;}
     }
 }
 </style>
