@@ -1,7 +1,7 @@
 <template>
     <div class="info-box">
         <div class="info-icon" v-if="showIcon">
-            <i class="fas fa-info-circle"></i>
+            <p>i</p>
         </div>
         <p class="ta-c">
             <slot></slot>
@@ -24,9 +24,9 @@ export default {
     background-color: #058a5e;
     color: #e5fff1;
     padding: 30px;
-    font-size: 21px;
+    font-size: 1.4rem;
     position: relative;
-    font-family: "Book Antiqua", Arial;
+    font-family: Roboto, Arial, sans-serif;
 
     p {
         width: 80%;
@@ -37,6 +37,19 @@ export default {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        height: 2.2rem;
+        width: 2.2rem;
+        padding: 0.75rem;
+        border-radius: 50%;
+        border: #e5fff1 solid 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
     }
 }
 </style>

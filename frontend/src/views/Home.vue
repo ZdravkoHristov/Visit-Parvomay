@@ -5,6 +5,7 @@
     </info-box>
 
     <section class="what-can-you-find ">
+        <div class="lens"></div>
         <div class="wcyf-container">
             <div class="info">
                 <h2>
@@ -157,6 +158,19 @@ export default {
 
 .what-can-you-find {
     background: var(--clr-light-gray1);
+    position:relative;
+
+    .lens {
+        position: absolute;
+        bottom: -1%;
+        left: -10%;
+        z-index: 0;
+        width: 63%;
+        height: 100%;
+        background: url(/img/lens.18dd99a6.svg) no-repeat center center;
+        background-size: cover;
+        opacity: 0.2;
+    }
 }
 
 .wcyf-container {
@@ -167,6 +181,7 @@ export default {
 
     .info {
         width: 30%;
+        z-index: 1;
     }
 
     h2 {
@@ -229,4 +244,6 @@ export default {
 .info-shadow {
     box-shadow: 0 5px rgba(#1c1e1b, 0.21);
 }
+
+.info-box {font-family: "Book Antiqua", serif}
 </style>

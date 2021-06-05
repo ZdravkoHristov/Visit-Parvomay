@@ -1,6 +1,7 @@
 <template>
     <InfoBox>Вижте най-популярните заведения сред<br> посетителите на сайта</InfoBox>
     <section class="first-section">
+        <div class="burger"></div>
 		<div class="box-holder">
 			<div class="with-text">
 				<restaurantsReview>
@@ -151,6 +152,19 @@ export default {
 	background-color: #f6f6f6;
 	padding: 5% 0;
     height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.burger {
+    position: absolute;
+    right: -17%;
+    top: -27%;
+    width: 51%;
+    height: 100%;
+    background: url(/img/burger.a2c681cf.svg) no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
 }
 
 .box-holder {
