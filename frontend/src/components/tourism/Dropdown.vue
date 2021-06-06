@@ -23,9 +23,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: #f3f3f3;
     padding: 20px;
     cursor: pointer;
+    transition: ease-in-out 0.5s;
+    &:hover{
+        background-color: #1c3637 !important;
+    }
     h2 {
         font-weight: 100;
         font-size: 30px;
