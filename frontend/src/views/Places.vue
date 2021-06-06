@@ -370,6 +370,7 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
+
 .nature-places {
     background-color: var(--clr-dark-1);
     color: #fff;
@@ -547,5 +548,27 @@ p {
     }
     h2 {font-size: 2.2rem;}
     p {font-size: 1.1rem;}
+}
+
+@media(max-width: 850px) {
+    h2 {font-size: 2rem;}
+    p {font-size: 1rem;}
+}
+
+@media(max-width: 750px) {
+    h2 {font-size: 1.7rem;}
+    p {font-size: 0.95rem;}
+    .nature-places .carousel-wrapper {max-width: 57%;}
+    .nature-places .info {max-width: 43%;}
+}
+
+@media(max-width: 650px) {
+    h2 {font-size: 1.7rem;}
+    .nature-places h2 {font-size: 2rem;}
+    p {font-size: 1rem;}
+    .nature-places {flex-direction: column;}
+    .nature-places .carousel-wrapper {max-width: 100%;}
+    .nature-places .info {max-width: 75%; margin: 2% auto;}
+    .nature-places .compass {height: 58%; top: -15%; right: 5%; left: unset;}
 }
 </style>

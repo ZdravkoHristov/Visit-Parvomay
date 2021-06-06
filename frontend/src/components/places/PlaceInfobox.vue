@@ -96,4 +96,18 @@ p {
         }
     }
 }
+
+/* ----------------------------------------------------------------------------
+ -------------------------------- RESPONSIVE ----------------------------------
+ ------------------------------------------------------------------------------ */
+
+@media(max-width: 850px) {
+    .text-green-infobox p {font-size: 0.8rem;}
+    .text-green-infobox h2 {font-size: 1.4rem;}
+}
+
+@media(max-width: 750px) {
+    .img-green-infobox {display:none;}
+    .text-green-infobox {grid-column: 1/3;}
+}
 </style>

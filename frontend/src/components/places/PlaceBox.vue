@@ -26,7 +26,8 @@ export default {
 .image {
     background-size: cover;
     background-position: center;
-    height: 300px;
+    max-height: 300px;
+    height: 30vw;
 }
 
 .text {
@@ -39,5 +40,13 @@ export default {
     color: var(--clr-other-green);
     font-size: 1.2rem;
     margin-bottom: 5px;
+}
+
+/* ----------------------------------------------------------------------------
+ -------------------------------- RESPONSIVE ----------------------------------
+ ------------------------------------------------------------------------------ */
+
+@media(max-width: 1150px) {
+    .image {height:25vw;}
 }
 </style>
