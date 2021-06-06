@@ -29,7 +29,7 @@ export default {
     margin-left: auto;
     margin-right: auto;
     max-width:1300px;
-    height: 50vh;
+    height: 70vh;
     &>* {flex:1;}
     h2 {
     font-size:2.8rem;
