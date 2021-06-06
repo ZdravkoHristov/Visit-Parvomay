@@ -344,5 +344,6 @@ export default {
         div p:nth-child(1) {font-size: 1.1rem;}
     }
     .comment p:last-child{padding: 1rem 1.2rem 1.2rem;}
+    .restaurants-holder .box {height:17rem;}
 }
 </style>
