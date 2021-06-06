@@ -121,4 +121,9 @@
 @media(max-width: 850px) {
     .rating p {font-size: 1.1rem;}
 }
+
+@media(max-width: 850px) {
+    .icon-size{ font-size: 1rem;}
+    .rating p {font-size: 1rem;}
+}
 </style>

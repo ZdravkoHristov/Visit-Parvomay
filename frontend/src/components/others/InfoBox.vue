@@ -70,4 +70,9 @@ export default {
         p {width: 80%;}
     }
 }
+
+@media(max-width: 750px) {
+    .info-box p {width: 100%;}
+    .info-box .info-icon {display:none;}
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <section class="flex m-y-3 tourism-container tourism-info">
+    <section class="flex tourism-container tourism-info">
         <div class="img-container">
             <div class='img'></div>
         </div>
@@ -25,6 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .tourism-container{
+    padding: 3rem 0;
     margin-left: auto;
     margin-right: auto;
     max-width:1300px;
@@ -88,9 +89,10 @@ export default {
 }
 
 @media(max-width: 850px) {
-    .img-container {display: none;}
-    .tourism-container {height: 30vh;}
+    .tourism-container {height: 85vh; flex-direction: column-reverse; padding: 0.1rem 0;}
+    .tourism-container .text{margin-bottom: 2%;}
     header h2 {font-size: 2.4rem;}
     main p {font-size: 1.2rem;}
+    main .img-holder {display: none;}
 }
 </style>

@@ -144,4 +144,8 @@
 @media(max-width: 850px) {
     .main-header{min-height: 70vh;}
 }
+
+@media(max-width: 750px) {
+    .main-header {min-height: 20vh; max-height: 50vh;}
+}
 </style>

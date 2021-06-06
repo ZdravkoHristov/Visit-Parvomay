@@ -346,4 +346,27 @@ export default {
     .comment p:last-child{padding: 1rem 1.2rem 1.2rem;}
     .restaurants-holder .box {height:17rem;}
 }
+
+@media(max-width: 750px) {
+    .box-holder {width: 100%;}
+    .with-text{
+        width:33%;
+        &:first-child, &:last-child {width: 27%;}
+    }
+    .icon-size {font-size: 1rem;}
+    .rating p {font-size: 0.8rem;}
+    .comment-box .top-information div p:nth-child(2) {font-size: 1.1rem;}
+    .comment-box .top-information div p:nth-child(1) {font-size: 0.9rem;}
+}
+
+@media(max-width: 650px) {
+    .with-text:first-child, .with-text:last-child {display:none;}
+    .box-holder {justify-content: center;}
+    .first-section {height: 70vh;}
+    .restaurants-holder {grid-template-columns: repeat(2, 1fr); height: 125rem; padding: 8% 10%;}
+    .comment-box .top-information div p:nth-child(2) {font-size: 1rem; margin-left: 5rem;}
+    .comment-box .top-information div p:nth-child(1) {font-size: 0.8rem; margin-left: 5rem;}
+    .comment-box .top-information .profile {width: 5rem; height: 5rem;}
+    .comment-box .top-information{margin-top: -4vh; height: 13vh;}
+}
 </style>

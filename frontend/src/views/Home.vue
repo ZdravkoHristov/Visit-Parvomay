@@ -269,4 +269,14 @@ export default {
     .boxes-holder{max-width:100%; height: 20rem;}
     .button-wrapper {max-width:100%;}
 }
+
+@media(max-width: 750px) {
+    .wcyf-container {justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem;}
+    .wcyf-container .images {display: none;}
+    .wcyf-container .info {width: 100%;}
+    .wcyf-container .info h2 {margin-top: 0;}
+    .boxes-holder {grid-template-columns: repeat(2,1fr); grid-gap: 1% 9%; width: 70%; padding: 1rem 0; height: 35rem;}
+    .boxes-holder .box {height: 15rem;}
+    .button-wrapper {max-width: 70%;}
+}
 </style>
