@@ -311,6 +311,10 @@ export default {
 
 @media(max-width: 1150px) {
     .first-section{height:80vh;}
+    .with-text{
+        width:30%;
+        &:first-child, &:last-child {width: 25%;}
+    }
     .box-holder {width: 80%;}
     .restaurants-holder {
         padding: 5% 3% 12%;
@@ -322,5 +326,23 @@ export default {
     .comment-box .top-information div p:first-child{font-size: 1.3rem;}
     .comment-box .top-information div p:nth-child(2){font-size: 1.6rem;}
     .comment p {font-size: 0.8rem;}
+}
+
+@media(max-width: 850px) {
+    .first-section{height:60vh;}
+    .with-text{
+        width:35%;
+        &:first-child, &:last-child {width: 30%;}
+    }
+    .info-box {padding: 20px 30px;}
+    .all-restaurants .title{font-size: 1.2rem;}
+    .restaurants-holder {grid-template-columns: repeat(3, 1fr); grid-gap: 2.5% 5%; padding-bottom: 18%;}
+    .comment-box .top-information{
+        margin-top: -9vh;
+        height: 17vh;
+        div p:nth-child(2) {font-size: 1.35rem;}
+        div p:nth-child(1) {font-size: 1.1rem;}
+    }
+    .comment p:last-child{padding: 1rem 1.2rem 1.2rem;}
 }
 </style>

@@ -261,5 +261,12 @@ export default {
         .images{width: 65%;}
     }
     .boxes-holder{max-width: 85%;}
+    .button-wrapper{max-width: 85%;}
+}
+
+@media(max-width: 850px) {
+    .wcyf-container .images .title{font-size:1rem;}
+    .boxes-holder{max-width:100%; height: 20rem;}
+    .button-wrapper {max-width:100%;}
 }
 </style>

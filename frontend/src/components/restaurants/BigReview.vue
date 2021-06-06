@@ -117,4 +117,8 @@
 @media(max-width: 1150px) {
     .star {width:3.5rem; height:3.5rem;}
 }
+
+@media(max-width: 850px) {
+    .rating p {font-size: 1.1rem;}
+}
 </style>
