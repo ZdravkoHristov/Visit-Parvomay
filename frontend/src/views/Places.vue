@@ -74,7 +74,6 @@ import PlaceInfobox from "../components/places/PlaceInfobox.vue";
 export default {
     data() {
         return {
-            itemsPerRow: 3,
             infoBoxIndex: -1,
             activeIndex: -1,
             carouselItems: [
@@ -301,7 +300,11 @@ export default {
             const rowIndex = Math.trunc(item.id / this.itemsPerRow) + 1;
             this.activeIndex = item.id;
             this.infoBoxIndex = -1;
-            setTimeout(() => (this.infoBoxIndex = rowIndex));
+            setTimeout(() => {
+                this.infoBoxIndex = rowIndex;
+                console.log('info box index: ', this.infoBoxIndex)
+            })
+          
         },
         goBack() {
             this.activeIndex =
@@ -317,6 +320,16 @@ export default {
     },
 
     computed: {
+        vw() {
+            return document.documentElement.offsetWidth;
+        },
+        itemsPerRow() {
+            if (this.vw > 750) {
+                return 3;
+            }
+
+            return 2;
+        },
         rowsCount() {
             return Math.ceil(this.items.length / this.itemsPerRow);
         },
@@ -343,11 +356,13 @@ export default {
             return styles;
         },
         infoBoxStyles() {
+            
             if (this.infoBoxIndex < 0) {
                 return {};
             }
             return {
-                "grid-row-start": this.infoBoxIndex + 1
+                "grid-row-start": this.infoBoxIndex + 1,
+                "grid-column-end": this.itemsPerRow + 1,
             };
         },
         activeInfo() {
@@ -489,7 +504,7 @@ p {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-column-start: 1;
-    grid-column-end: 4;
+   
 }
 
 .overlay {
