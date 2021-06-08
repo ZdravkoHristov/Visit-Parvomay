@@ -12,6 +12,8 @@ export default {
 };
 </script>
 
+// Test comment
+
 <style lang="scss">
 @import "@/styles/main.scss";
 p {
